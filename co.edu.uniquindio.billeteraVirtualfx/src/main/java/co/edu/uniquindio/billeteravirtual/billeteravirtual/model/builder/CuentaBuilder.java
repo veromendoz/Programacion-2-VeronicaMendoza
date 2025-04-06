@@ -1,12 +1,12 @@
 package co.edu.uniquindio.billeteravirtual.billeteravirtual.model.builder;
 
 public class CuentaBuilder {
-    public int idCuenta;
+    public String idCuenta;
     public String nombreBanco;
     public String numeroCuenta;
     private TipoCuenta tipoCuenta;
 
-    public CuentaBuilder idCuenta(int idCuenta) {
+    public CuentaBuilder idCuenta(String idCuenta) {
         this.idCuenta = idCuenta;
         return this; // Devuelve la instancia actual de CuentaBuilder
     }

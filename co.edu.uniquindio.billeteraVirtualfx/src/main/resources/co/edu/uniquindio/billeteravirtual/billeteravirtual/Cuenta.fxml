@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="534.0" prefWidth="764.0" style="-fx-background-color: #48426D;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.billeteravirtual.billeteravirtual.viewcontroller.CuentaController">
    <children>
       <SplitPane dividerPositions="0.4298469387755102" layoutX="11.0" layoutY="42.0" orientation="VERTICAL" prefHeight="472.0" prefWidth="742.0" style="-fx-background-color: #312C51;">

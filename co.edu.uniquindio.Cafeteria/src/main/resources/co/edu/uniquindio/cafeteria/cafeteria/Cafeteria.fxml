@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="380.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.cafeteria.cafeteria.ViewController.CafeteriaViewController">
+   <children>
+      <CheckBox fx:id="ChLeche" layoutX="51.0" layoutY="65.0" mnemonicParsing="false" onAction="#OnChLeche" text="Leche" />
+      <CheckBox fx:id="ChAzucar" layoutX="51.0" layoutY="91.0" mnemonicParsing="false" onAction="#OnChAzucar" text="Azucar" />
+      <Button fx:id="btnCalcular" layoutX="94.0" layoutY="181.0" mnemonicParsing="false" onAction="#OnCalcular" prefHeight="26.0" prefWidth="112.0" text="Calcular" />
+      <Label layoutX="51.0" layoutY="233.0" text="Costo:" />
+      <Label layoutX="51.0" layoutY="267.0" text="Ingredientes:" />
+      <Label layoutX="261.0" layoutY="32.0" prefHeight="18.0" prefWidth="118.0" />
+      <Label layoutX="265.0" layoutY="41.0" text="CAFETERIA" />
+      <Label fx:id="lbCosto" layoutX="95.0" layoutY="233.0" text="\$" />
+      <Label fx:id="lbIngredientes" layoutX="129.0" layoutY="267.0" text="Cafe simple" />
+      <CheckBox fx:id="ChWhisky" layoutX="51.0" layoutY="117.0" mnemonicParsing="false" onAction="#OnChWhiscy" text="Whisky" />
+      <CheckBox fx:id="ChCanela" layoutX="51.0" layoutY="143.0" mnemonicParsing="false" onAction="#OnChCanela" text="Canela" />
+   </children>
+</AnchorPane>
