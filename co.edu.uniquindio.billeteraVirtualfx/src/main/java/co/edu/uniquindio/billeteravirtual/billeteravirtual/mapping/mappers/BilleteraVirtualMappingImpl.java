@@ -27,8 +27,7 @@ public class BilleteraVirtualMappingImpl implements IBilleteraVirtualMapping {
         return new CuentaDto(
                 cuenta.getIdCuenta(),
                 cuenta.getNombreBanco(),
-                cuenta.getNumeroCuenta(),
-                cuenta.getTipoCuenta());
+                cuenta.getNumeroCuenta());
     }
 
     @Override
@@ -37,7 +36,6 @@ public class BilleteraVirtualMappingImpl implements IBilleteraVirtualMapping {
                 .idCuenta(cuentaDto.idCuenta())
                 .nombreBanco(cuentaDto.nombreBanco())
                 .numeroCuenta(cuentaDto.numeroCuenta())
-                .tipoCuenta(cuentaDto.tipoCuenta())
                 .build();
     }
 

@@ -30,4 +30,19 @@ public class ModelFactory implements IModelFactoryService {
     public List<CuentaDto> obtenerCuenta() {
         return mapper.getCuentasDto(billeteraVirtual.getListaCuentas());
     }
+
+    @Override
+    public boolean agregarCuenta(CuentaDto cuentaDto) {
+        return billeteraVirtual.crearCuenta(mapper.cuentaDtoToCuenta(cuentaDto));
+    }
+    @Override
+    public boolean actualizarCuenta(CuentaDto cuentaDto) {
+        return billeteraVirtual.actualizarCuenta(mapper.cuentaDtoToCuenta(cuentaDto));
+    }
+    @Override
+    public boolean eliminarCuenta(String idCuenta) {
+        return billeteraVirtual.eliminarCuenta(idCuenta);
+    }
+
+
 }

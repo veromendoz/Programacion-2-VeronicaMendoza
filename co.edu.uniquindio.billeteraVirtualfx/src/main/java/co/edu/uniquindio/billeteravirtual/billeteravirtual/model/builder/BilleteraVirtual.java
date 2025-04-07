@@ -10,6 +10,25 @@ public class BilleteraVirtual {
     public BilleteraVirtual() {
         this.listaCuentas = new ArrayList<>();
     }
+    public boolean actualizarCuenta(Cuenta cuentaActualizada) {
+        for (int i = 0; i < listaCuentas.size(); i++) {
+            if (listaCuentas.get(i).getIdCuenta().equalsIgnoreCase(cuentaActualizada.getIdCuenta())) {
+                listaCuentas.set(i, cuentaActualizada);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarCuenta(String idCuenta) {
+        Cuenta cuenta = obtenerCuenta(idCuenta);
+        if (cuenta != null) {
+            listaCuentas.remove(cuenta);
+            return true;
+        }
+        return false;
+    }
+
 
     public boolean crearCuenta(String idCuenta, String nombreBanco, String numeroCuenta, String tipoCuenta) {
         Cuenta cuentaEncontrada = obtenerCuenta(idCuenta);

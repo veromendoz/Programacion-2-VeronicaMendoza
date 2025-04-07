@@ -14,4 +14,20 @@ public class CuentaController {
     public List<CuentaDto> obtenerCuenta() {
         return modelFactory.obtenerCuenta();
     }
+
+    public boolean agregarCuenta(CuentaDto cuentaDto) {
+        return modelFactory.agregarCuenta(cuentaDto);
+    }
+    public boolean actualizarCuenta(CuentaDto cuentaDto) {
+        return modelFactory.actualizarCuenta(cuentaDto);
+    }
+
+    public boolean eliminarCuenta(String idCuenta) {
+        return modelFactory.eliminarCuenta(idCuenta);
+    }
+
+
+
+
+
 }

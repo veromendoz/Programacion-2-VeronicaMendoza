@@ -6,7 +6,8 @@ import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.builder.TipoCue
 public record CuentaDto(
         String idCuenta,
         String nombreBanco,
-        String numeroCuenta,
-        TipoCuenta tipoCuenta
+        String numeroCuenta
 ) {
 }
+
+
