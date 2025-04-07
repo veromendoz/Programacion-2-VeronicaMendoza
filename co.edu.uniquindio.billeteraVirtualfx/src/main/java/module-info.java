@@ -10,9 +10,4 @@ module co.edu.uniquindio.billeteravirtual.billeteravirtual {
     exports co.edu.uniquindio.billeteravirtual.billeteravirtual.viewcontroller;
     opens co.edu.uniquindio.billeteravirtual.billeteravirtual.controller;
     exports co.edu.uniquindio.billeteravirtual.billeteravirtual.controller;
-    opens co.edu.uniquindio.billeteravirtual.billeteravirtual.mapping;
-    exports co.edu.uniquindio.billeteravirtual.billeteravirtual.mapping;
-
-
-
 }

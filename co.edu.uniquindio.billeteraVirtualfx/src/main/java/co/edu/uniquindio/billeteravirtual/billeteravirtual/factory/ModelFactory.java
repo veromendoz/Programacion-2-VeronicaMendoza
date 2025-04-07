@@ -1,9 +1,13 @@
 package co.edu.uniquindio.billeteravirtual.billeteravirtual.factory;
 
+import co.edu.uniquindio.billeteravirtual.billeteravirtual.mapping.dto.CuentaDto;
 import co.edu.uniquindio.billeteravirtual.billeteravirtual.mapping.mappers.BilleteraVirtualMappingImpl;
 import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.builder.BilleteraVirtual;
 import co.edu.uniquindio.billeteravirtual.billeteravirtual.service.IBilleteraVirtualMapping;
+import co.edu.uniquindio.billeteravirtual.billeteravirtual.service.IModelFactoryService;
 import co.edu.uniquindio.billeteravirtual.billeteravirtual.utils.DataUtil;
+
+import java.util.List;
 
 public class ModelFactory implements IModelFactoryService {
     private static ModelFactory modelFactory;
@@ -16,10 +20,14 @@ public class ModelFactory implements IModelFactoryService {
         }
         return modelFactory;
     }
-
     private ModelFactory(){
         billeteraVirtual = new BilleteraVirtual();
         mapper = new BilleteraVirtualMappingImpl();
         billeteraVirtual = DataUtil.inicializarDatos();
+    }
+
+    @Override
+    public List<CuentaDto> obtenerCuenta() {
+        return mapper.getCuentasDto(billeteraVirtual.getListaCuentas());
     }
 }

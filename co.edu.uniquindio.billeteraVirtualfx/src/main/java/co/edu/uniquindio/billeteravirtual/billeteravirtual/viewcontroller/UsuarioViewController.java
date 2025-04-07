@@ -1,4 +1,4 @@
 package co.edu.uniquindio.billeteravirtual.billeteravirtual.viewcontroller;
 
-public class UsuarioController {
+public class UsuarioViewController {
 }
