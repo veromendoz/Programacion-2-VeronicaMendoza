@@ -2,19 +2,19 @@ package co.edu.uniquindio.cafeteria.cafeteria;
 
 import co.edu.uniquindio.cafeteria.cafeteria.Services.ICoffee;
 
-public class CafeDecorator implements ICoffee {
-    protected ICoffee decoratedCoffee;
+abstract class CafeDecorator implements ICoffee {
+    protected ICoffee decoratedCafe;
 
-    public CafeDecorator(ICoffee coffee) {
-        this.decoratedCoffee = coffee;
+    public CafeDecorator(ICoffee cafe) {
+        this.decoratedCafe = cafe;
     }
 
     public String getDescripcion() {
-        return decoratedCoffee.getDescripcion();
+        return decoratedCafe.getDescripcion();
     }
 
-    public double getCost() {
-        return decoratedCoffee.getCost();
+    public double getCosto() {
+        return decoratedCafe.getCosto();
     }
 }
-}
+

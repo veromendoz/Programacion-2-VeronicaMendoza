@@ -10,7 +10,7 @@ public  class CafeSimple implements ICoffee {
     }
 
     @Override
-    public double getCost() {
+    public double getCosto() {
         return 2.0;
     }
 }

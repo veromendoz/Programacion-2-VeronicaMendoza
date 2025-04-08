@@ -1,6 +1,7 @@
 module co.edu.uniquindio.cafeteria.cafeteria {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens co.edu.uniquindio.cafeteria.cafeteria to javafx.fxml;
