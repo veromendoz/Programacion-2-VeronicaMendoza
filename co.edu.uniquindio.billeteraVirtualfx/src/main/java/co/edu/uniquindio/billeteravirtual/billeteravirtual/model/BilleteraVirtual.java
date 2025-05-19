@@ -1,4 +1,4 @@
-package co.edu.uniquindio.billeteravirtual.billeteravirtual.model.builder;
+package co.edu.uniquindio.billeteravirtual.billeteravirtual.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,4 +87,52 @@ public class BilleteraVirtual {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    // --- Usuario ---
+    private List<Usuario> listaUsuarios = new ArrayList<>();
+
+    public boolean crearUsuario(Usuario nuevoUsuario) {
+        if (obtenerUsuario(nuevoUsuario.getIdUsuario()) == null) {
+            listaUsuarios.add(nuevoUsuario);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean actualizarUsuario(Usuario usuarioActualizado) {
+        for (int i = 0; i < listaUsuarios.size(); i++) {
+            if (listaUsuarios.get(i).getIdUsuario().equalsIgnoreCase(usuarioActualizado.getIdUsuario())) {
+                listaUsuarios.set(i, usuarioActualizado);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarUsuario(String idUsuario) {
+        Usuario usuario = obtenerUsuario(idUsuario);
+        if (usuario != null) {
+            listaUsuarios.remove(usuario);
+            return true;
+        }
+        return false;
+    }
+
+    public Usuario obtenerUsuario(String idUsuario) {
+        for (Usuario usuario : listaUsuarios) {
+            if (usuario.getIdUsuario().equalsIgnoreCase(idUsuario)) {
+                return usuario;
+            }
+        }
+        return null; // Si no lo encuentra, retorna null
+    }
+
+
+    public List<Usuario> getListaUsuarios() {
+        return listaUsuarios;
+    }
+
+    public void setListaUsuarios(List<Usuario> listaUsuarios) {
+        this.listaUsuarios = listaUsuarios;
+    }
+
 }

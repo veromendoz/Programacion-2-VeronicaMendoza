@@ -2,7 +2,8 @@ package co.edu.uniquindio.billeteravirtual.billeteravirtual.factory;
 
 import co.edu.uniquindio.billeteravirtual.billeteravirtual.mapping.dto.CuentaDto;
 import co.edu.uniquindio.billeteravirtual.billeteravirtual.mapping.mappers.BilleteraVirtualMappingImpl;
-import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.builder.BilleteraVirtual;
+import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.BilleteraVirtual;
+import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.Usuario;
 import co.edu.uniquindio.billeteravirtual.billeteravirtual.service.IBilleteraVirtualMapping;
 import co.edu.uniquindio.billeteravirtual.billeteravirtual.service.IModelFactoryService;
 import co.edu.uniquindio.billeteravirtual.billeteravirtual.utils.DataUtil;
@@ -43,6 +44,29 @@ public class ModelFactory implements IModelFactoryService {
     public boolean eliminarCuenta(String idCuenta) {
         return billeteraVirtual.eliminarCuenta(idCuenta);
     }
+
+    // --- Operaciones sobre Usuario sin usar DTO ---
+    public List<Usuario> obtenerUsuarios() {
+        return billeteraVirtual.getListaUsuarios();
+    }
+
+    public boolean agregarUsuario(Usuario usuario) {
+        return billeteraVirtual.crearUsuario(usuario);
+    }
+
+    public boolean actualizarUsuario(Usuario usuario) {
+        return billeteraVirtual.actualizarUsuario(usuario);
+    }
+
+    public boolean eliminarUsuario(String idUsuario) {
+        return billeteraVirtual.eliminarUsuario(idUsuario);
+    }
+
+    public Usuario obtenerUsuario(String idUsuario) {
+        return billeteraVirtual.obtenerUsuario(idUsuario);
+    }
+
+
 
 
 }

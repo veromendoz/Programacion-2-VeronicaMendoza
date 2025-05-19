@@ -1,6 +1,7 @@
 package co.edu.uniquindio.billeteravirtual.billeteravirtual.service;
 
-import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.builder.Cuenta;
+import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.Cuenta;
+import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.Usuario;
 
 import java.util.List;
 
@@ -18,7 +19,18 @@ public interface IBilleteraVirtualUQ {
     void buscarCuenta(String idCuenta);
 
     boolean actualizarCuenta(String idCuentaActual, String nombreBanco, String numeroCuenta, String tipoCuenta);
+
+    boolean crearUsuario(String idUsuario, String nombre, String email, String celular, Double saldoTotal, String password);
+
+    boolean eliminarUsuario(String idUsuario);
+
+    List<Usuario> obtenerUsuarios();
+
+    Usuario obtenerUsuario(String idUsuario);
+
+    boolean actualizarUsuario(String idUsuario, String nombre, String email, String celular, Double saldoTotal, String password);
 }
+
 /**
     boolean crearObjeto(String idObjeto, String descripcion);
     Objeto obtenerObjeto(String idObjeto);

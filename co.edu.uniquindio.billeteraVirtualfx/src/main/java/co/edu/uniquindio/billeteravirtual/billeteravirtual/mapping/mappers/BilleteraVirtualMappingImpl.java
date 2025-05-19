@@ -1,7 +1,7 @@
 package co.edu.uniquindio.billeteravirtual.billeteravirtual.mapping.mappers;
 
 import co.edu.uniquindio.billeteravirtual.billeteravirtual.mapping.dto.CuentaDto;
-import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.builder.Cuenta;
+import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.Cuenta;
 import co.edu.uniquindio.billeteravirtual.billeteravirtual.service.IBilleteraVirtualMapping;
 
 import java.util.ArrayList;
@@ -27,7 +27,8 @@ public class BilleteraVirtualMappingImpl implements IBilleteraVirtualMapping {
         return new CuentaDto(
                 cuenta.getIdCuenta(),
                 cuenta.getNombreBanco(),
-                cuenta.getNumeroCuenta());
+                cuenta.getNumeroCuenta(),
+                cuenta.getTipoCuenta());
     }
 
     @Override

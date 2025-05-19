@@ -1,12 +1,13 @@
 package co.edu.uniquindio.billeteravirtual.billeteravirtual.mapping.dto;
 
 
-import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.builder.TipoCuenta;
+import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.TipoCuenta;
 
 public record CuentaDto(
         String idCuenta,
         String nombreBanco,
-        String numeroCuenta
+        String numeroCuenta,
+        TipoCuenta tipoCuenta
 ) {
 }
 

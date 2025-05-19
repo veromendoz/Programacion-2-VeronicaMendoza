@@ -1,28 +1,27 @@
-package co.edu.uniquindio.billeteravirtual.billeteravirtual.model.builder;
+package co.edu.uniquindio.billeteravirtual.billeteravirtual.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Administrador {
-    public String idAdmistrador;
+public class Categoria {
+    public String idCategoria;
     public String nombre;
-    public String email;
-    private List<Usuario> listaUsuarios = new ArrayList<>();
+    public String descripcion;
     private List<Presupuesto> listaPresupuestos = new ArrayList<>();
     private List<Transaccion> listaTransacciones = new ArrayList<>();
 
-    public Administrador(String idAdmistrador, String nombre, String email) {
-        this.idAdmistrador = idAdmistrador;
+    public Categoria(String idCategoria, String nombre, String descripcion) {
+        this.idCategoria = idCategoria;
         this.nombre = nombre;
-        this.email = email;
+        this.descripcion = descripcion;
     }
 
-    public String getIdAdmistrador() {
-        return idAdmistrador;
+    public String getIdCategoria() {
+        return idCategoria;
     }
 
-    public void setIdAdmistrador(String idAdmistrador) {
-        this.idAdmistrador = idAdmistrador;
+    public void setIdCategoria(String idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
     public String getNombre() {
@@ -33,20 +32,12 @@ public class Administrador {
         this.nombre = nombre;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public List<Usuario> getListaUsuarios() {
-        return listaUsuarios;
-    }
-
-    public void setListaUsuarios(List<Usuario> listaUsuarios) {
-        this.listaUsuarios = listaUsuarios;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public List<Presupuesto> getListaPresupuestos() {
@@ -64,5 +55,4 @@ public class Administrador {
     public void setListaTransacciones(List<Transaccion> listaTransacciones) {
         this.listaTransacciones = listaTransacciones;
     }
-
 }

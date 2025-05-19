@@ -5,6 +5,8 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.billeteravirtual.billeteravirtual.mapping.dto.CuentaDto;
+import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.TipoCuenta;
+import co.edu.uniquindio.billeteravirtual.billeteravirtual.utils.ControllerUtil;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -48,6 +50,9 @@ public class CuentaViewController {
     private TableColumn<CuentaDto, String> tcNombreBanco;
 
     @FXML
+    private ComboBox<TipoCuenta> cbxTipoCuenta;
+
+    @FXML
     private TableColumn<CuentaDto, String> tcNumeroCuenta;
 
     @FXML
@@ -62,13 +67,17 @@ public class CuentaViewController {
     @FXML
     private TextField txtNumeroCuenta;
 
+    ControllerUtil controllerUtil = new ControllerUtil();
+
     @FXML
     void initialize() {
         cuentaController = new CuentaController();
+        cbxTipoCuenta.getItems().addAll(TipoCuenta.values());
         initView();
     }
 
     private void initView() {
+
         initDataBinding();
         obtenerCuenta();
         tableCuenta.getItems().clear();
@@ -84,6 +93,7 @@ public class CuentaViewController {
         tcIdCuenta.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().idCuenta()));
         tcNombreBanco.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombreBanco()));
         tcNumeroCuenta.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().numeroCuenta()));
+        tcTipoCuenta.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().tipoCuenta().toString()));
     }
 
     private void listenerSelection() {
@@ -148,7 +158,8 @@ public class CuentaViewController {
         return new CuentaDto(
                 txtIdCuenta.getText(),
                 txtNombreBanco.getText(),
-                txtNumeroCuenta.getText()
+                txtNumeroCuenta.getText(),
+                cbxTipoCuenta.getValue()
         );
     }
     private boolean datosValidos(CuentaDto cuentaDto) {
@@ -212,6 +223,13 @@ public class CuentaViewController {
         txtNombreBanco.clear();
         txtNumeroCuenta.clear();
     }
-
-
+    @FXML
+    private void volverInicio() {
+        try {
+            controllerUtil.navegarVentanas("/InicioView.fxml", "Banco", false);
+        } catch (Exception e) {
+            controllerUtil.crearAlerta("Error al volver al inicio: " + e.getMessage(), Alert.AlertType.ERROR);
+            e.printStackTrace();
+        }
+    }
 }

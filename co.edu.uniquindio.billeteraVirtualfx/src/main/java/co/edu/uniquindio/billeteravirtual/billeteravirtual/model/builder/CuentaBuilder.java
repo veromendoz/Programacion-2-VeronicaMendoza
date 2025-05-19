@@ -1,5 +1,8 @@
 package co.edu.uniquindio.billeteravirtual.billeteravirtual.model.builder;
 
+import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.Cuenta;
+import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.TipoCuenta;
+
 public class CuentaBuilder {
     public String idCuenta;
     public String nombreBanco;

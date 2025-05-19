@@ -6,7 +6,7 @@ public  class CafeSimple implements ICoffee {
 
     @Override
     public String getDescripcion() {
-        return "Simple Coffe";
+        return "Cafe Simple";
     }
 
     @Override

@@ -1,4 +1,4 @@
-package co.edu.uniquindio.billeteravirtual.billeteravirtual.model.builder;
+package co.edu.uniquindio.billeteravirtual.billeteravirtual.model;
 
 public class Presupuesto {
     public String idPresupuesto;

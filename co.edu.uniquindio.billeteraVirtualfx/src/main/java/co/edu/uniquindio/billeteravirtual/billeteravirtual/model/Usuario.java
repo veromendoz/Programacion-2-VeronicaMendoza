@@ -1,4 +1,4 @@
-package co.edu.uniquindio.billeteravirtual.billeteravirtual.model.builder;
+package co.edu.uniquindio.billeteravirtual.billeteravirtual.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,19 +8,21 @@ public class Usuario {
     public String nombre;
     public String email;
     public String celular;
-    public Double saldoTotal;
+    public String password;
+    private double saldoTotal;
     private Administrador administrador;
     private List<Presupuesto> listaPresupuestos = new ArrayList<>();
     private List<Transaccion> listaTransacciones = new ArrayList<>();
     private List<Cuenta> listacuentas = new ArrayList<>();
 
-    public Usuario(String idUsuario, String nombre, String email, String celular, Double saldoTotal, Administrador administrador) {
+    public Usuario(String idUsuario, String nombre, String email, String celular, String password, Administrador administrador) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.email = email;
         this.celular = celular;
-        this.saldoTotal = saldoTotal;
         this.administrador = administrador;
+        this.password = password;
+        this.saldoTotal = 0.0;
     }
 
     public String getIdUsuario() {
@@ -55,12 +57,12 @@ public class Usuario {
         this.celular = celular;
     }
 
-    public Double getSaldoTotal() {
-        return saldoTotal;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSaldoTotal(Double saldoTotal) {
-        this.saldoTotal = saldoTotal;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Administrador getAdministrador() {
@@ -93,5 +95,32 @@ public class Usuario {
 
     public void setListacuentas(List<Cuenta> listacuentas) {
         this.listacuentas = listacuentas;
+    }
+    
+    public double getSaldoTotal() {
+        return saldoTotal;
+    }
+    
+    public void setSaldoTotal(double saldoTotal) {
+        this.saldoTotal = saldoTotal;
+    }
+    
+    /**
+     * Calcula el saldo total sumando los saldos de todas las cuentas del usuario
+     * @return El saldo total actualizado
+     */
+    public double calcularSaldoTotal() {
+        double total = 0.0;
+        if (listacuentas != null) {
+            for (Cuenta cuenta : listacuentas) {
+                // Asumiendo que la clase Cuenta tiene un método getSaldo()
+                // Si no existe este método, tendrás que ajustar esta parte
+                if (cuenta != null) {
+                    total += cuenta.getSaldo();
+                }
+            }
+        }
+        this.saldoTotal = total;
+        return total;
     }
 }

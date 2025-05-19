@@ -1,7 +1,7 @@
 package co.edu.uniquindio.billeteravirtual.billeteravirtual.service;
 
 import co.edu.uniquindio.billeteravirtual.billeteravirtual.mapping.dto.CuentaDto;
-import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.builder.Cuenta;
+import co.edu.uniquindio.billeteravirtual.billeteravirtual.model.Cuenta;
 
 import java.util.List;
 
