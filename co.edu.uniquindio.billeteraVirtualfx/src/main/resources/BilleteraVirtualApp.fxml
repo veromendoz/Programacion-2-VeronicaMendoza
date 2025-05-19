@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="580.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.billeteravirtual.billeteravirtual.viewcontroller.BilleteraVirtualAppController">
+   <children>
+      <TabPane prefHeight="580.0" prefWidth="806.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Cuenta">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #312C51;">
+                    <children>
+                        <SplitPane layoutX="14.0" layoutY="14.0" orientation="VERTICAL" prefHeight="523.0" prefWidth="774.0">
+                            <items>
+                                <fx:include source="Cuenta.fxml" />
+                            </items>
+                        </SplitPane>
+                    </children>
+                </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Usuario">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #312C51;">
+                    <children>
+                        <SplitPane layoutX="14.0" layoutY="14.0" orientation="VERTICAL" prefHeight="523.0" prefWidth="774.0">
+                            <items>
+                                <fx:include source="Usuario.fxml" />
+                            </items>
+                        </SplitPane>
+                    </children>
+                </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

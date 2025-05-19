@@ -1,0 +1,138 @@
+package co.edu.uniquindio.billeteravirtual.billeteravirtual.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class BilleteraVirtual {
+    private String nombre;
+    private List<Cuenta> listaCuentas;
+
+    public BilleteraVirtual() {
+        this.listaCuentas = new ArrayList<>();
+    }
+    public boolean actualizarCuenta(Cuenta cuentaActualizada) {
+        for (int i = 0; i < listaCuentas.size(); i++) {
+            if (listaCuentas.get(i).getIdCuenta().equalsIgnoreCase(cuentaActualizada.getIdCuenta())) {
+                listaCuentas.set(i, cuentaActualizada);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarCuenta(String idCuenta) {
+        Cuenta cuenta = obtenerCuenta(idCuenta);
+        if (cuenta != null) {
+            listaCuentas.remove(cuenta);
+            return true;
+        }
+        return false;
+    }
+
+
+    public boolean crearCuenta(String idCuenta, String nombreBanco, String numeroCuenta, String tipoCuenta) {
+        Cuenta cuentaEncontrada = obtenerCuenta(idCuenta);
+        if (cuentaEncontrada == null) {
+            Cuenta cuenta = getBuildCuenta(idCuenta, nombreBanco, numeroCuenta, tipoCuenta);
+            getListaCuentas().add(cuenta);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean crearCuenta(Cuenta nuevoCuenta) {
+        Cuenta cuentaEncontrada = obtenerCuenta(nuevoCuenta.getIdCuenta());
+        if (cuentaEncontrada == null) {
+            getListaCuentas().add(nuevoCuenta);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private Cuenta getBuildCuenta(String idCuenta, String nombreBanco, String numeroCuenta, String tipoCuenta) {
+        // Convierte el String a TipoCuenta (enum)
+        TipoCuenta tipoEnum = TipoCuenta.valueOf(tipoCuenta.toUpperCase()); // Asegúrate que coincida con los nombres del enum
+
+        return Cuenta.builder()
+                .idCuenta(idCuenta)
+                .nombreBanco(nombreBanco)
+                .numeroCuenta(numeroCuenta)
+                .tipoCuenta(tipoEnum)
+                .build();
+    }
+
+    private Cuenta obtenerCuenta(String idCuenta) {
+        for (Cuenta cuenta : getListaCuentas()) {
+            if (cuenta.getIdCuenta().equalsIgnoreCase(idCuenta)) {
+                return cuenta;
+            }
+        }
+        return null;
+    }
+
+    public List<Cuenta> getListaCuentas() {
+        return listaCuentas;
+    }
+
+    public void setListaCuentas(List<Cuenta> listaCuentas) {
+        this.listaCuentas = listaCuentas;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    // --- Usuario ---
+    private List<Usuario> listaUsuarios = new ArrayList<>();
+
+    public boolean crearUsuario(Usuario nuevoUsuario) {
+        if (obtenerUsuario(nuevoUsuario.getIdUsuario()) == null) {
+            listaUsuarios.add(nuevoUsuario);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean actualizarUsuario(Usuario usuarioActualizado) {
+        for (int i = 0; i < listaUsuarios.size(); i++) {
+            if (listaUsuarios.get(i).getIdUsuario().equalsIgnoreCase(usuarioActualizado.getIdUsuario())) {
+                listaUsuarios.set(i, usuarioActualizado);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarUsuario(String idUsuario) {
+        Usuario usuario = obtenerUsuario(idUsuario);
+        if (usuario != null) {
+            listaUsuarios.remove(usuario);
+            return true;
+        }
+        return false;
+    }
+
+    public Usuario obtenerUsuario(String idUsuario) {
+        for (Usuario usuario : listaUsuarios) {
+            if (usuario.getIdUsuario().equalsIgnoreCase(idUsuario)) {
+                return usuario;
+            }
+        }
+        return null; // Si no lo encuentra, retorna null
+    }
+
+
+    public List<Usuario> getListaUsuarios() {
+        return listaUsuarios;
+    }
+
+    public void setListaUsuarios(List<Usuario> listaUsuarios) {
+        this.listaUsuarios = listaUsuarios;
+    }
+
+}
